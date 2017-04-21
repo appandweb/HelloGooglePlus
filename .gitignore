@@ -66,3 +66,4 @@ target
 Thumbs.db
 *.swp
 app/build/
+/app/google-services.json
