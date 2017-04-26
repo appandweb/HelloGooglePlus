@@ -28,13 +28,12 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.squareup.picasso.Picasso;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener,
         GoogleApiClient.ConnectionCallbacks {
-
     private static final String TAG = "TAG";
     private static final String PREF_NAME = "PrefUserLogged";
     private static final String IS_LOGGED = "UserLogged";
@@ -47,23 +46,23 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     SharedPreferences.Editor editor;
     private GoogleSignInAccount acct;
 
-    @InjectView(R.id.main_userImage)
+    @Bind(R.id.main_iv_user_image)
     ImageView userImage;
-    @InjectView(R.id.main_email)
+    @Bind(R.id.main_tv_user_email)
     TextView userEmail;
-    @InjectView(R.id.main_name)
+    @Bind(R.id.main_tv_user_name)
     TextView userName;
-    @InjectView(R.id.main_button_login)
+    @Bind(R.id.main_btn_login)
     SignInButton bLogin;
-    @InjectView(R.id.main_button_logout)
+    @Bind(R.id.main_btn_logout)
     Button bLogout;
 
-    @OnClick(R.id.main_button_login)
+    @OnClick(R.id.main_btn_login)
     public void onLogin(View view) {
         signIn();
     }
 
-    @OnClick(R.id.main_button_logout)
+    @OnClick(R.id.main_btn_logout)
     public void onLogout(View view) {
         signOut();
     }
@@ -84,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         initializeGoogleApiClient();
 
