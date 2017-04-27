@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">HelloGooglePlus</string>
+    <string name="server_client_id">916393903870-ap91k2lg9cm2tjphadupa54qfih0q1n0.apps.googleusercontent.com</string>
+    <string name="greetings">greetings</string>
+    <string name="loading">loading..</string>
+    <string name="signout">Sign out</string>
+
 </resources>
