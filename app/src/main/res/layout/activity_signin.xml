@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.winecta.hellogoogleplus.MainActivity">
+    tools:context="com.winecta.hellogoogleplus.SignInActivity">
 
     <com.google.android.gms.common.SignInButton
-        android:id="@+id/main_btn_login"
+        android:id="@+id/signin_btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -16,7 +16,7 @@
       >
     </com.google.android.gms.common.SignInButton>
     <ImageView
-        android:id="@+id/main_iv_user_image"
+        android:id="@+id/signin_iv_user_image"
         android:layout_marginTop="50sp"
         android:layout_alignParentTop="true"
         android:src="@mipmap/ic_launcher"
@@ -25,10 +25,10 @@
         android:layout_height="100sp" />
 
     <TextView
-        android:id="@+id/main_tv_user_name"
+        android:id="@+id/signin_tv_user_name"
         android:text="@string/loading"
         android:layout_width="wrap_content"
-        android:layout_below="@+id/main_iv_user_image"
+        android:layout_below="@+id/signin_iv_user_image"
         android:layout_centerInParent="true"
         android:layout_marginTop="20sp"
         android:textSize="20sp"
@@ -38,8 +38,8 @@
 
 
     <TextView
-        android:id="@+id/main_tv_user_email"
-        android:layout_below="@+id/main_tv_user_name"
+        android:id="@+id/signin_tv_user_email"
+        android:layout_below="@+id/signin_tv_user_name"
         android:layout_centerInParent="true"
         android:textSize="20sp"
         android:layout_marginTop="20dp"
@@ -50,10 +50,10 @@
         />
 
     <Button
-        android:id="@+id/main_btn_logout"
+        android:id="@+id/signin_btn_logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/main_tv_user_email"
+        android:layout_below="@+id/signin_tv_user_email"
         android:fontFamily="sans-serif-condensed"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
