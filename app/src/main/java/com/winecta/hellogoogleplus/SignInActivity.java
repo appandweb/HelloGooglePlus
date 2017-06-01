@@ -32,7 +32,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener,
+public class SignInActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener,
         GoogleApiClient.ConnectionCallbacks {
     private static final String TAG = "TAG";
     private static final String PREF_NAME = "PrefUserLogged";
@@ -46,23 +46,23 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     SharedPreferences.Editor editor;
     private GoogleSignInAccount acct;
 
-    @Bind(R.id.main_iv_user_image)
+    @Bind(R.id.signin_iv_user_image)
     ImageView userImage;
-    @Bind(R.id.main_tv_user_email)
+    @Bind(R.id.signin_tv_user_email)
     TextView userEmail;
-    @Bind(R.id.main_tv_user_name)
+    @Bind(R.id.signin_tv_user_name)
     TextView userName;
-    @Bind(R.id.main_btn_login)
+    @Bind(R.id.signin_btn_login)
     SignInButton bLogin;
-    @Bind(R.id.main_btn_logout)
+    @Bind(R.id.signin_btn_logout)
     Button bLogout;
 
-    @OnClick(R.id.main_btn_login)
+    @OnClick(R.id.signin_btn_login)
     public void onLogin(View view) {
         signIn();
     }
 
-    @OnClick(R.id.main_btn_logout)
+    @OnClick(R.id.signin_btn_logout)
     public void onLogout(View view) {
         signOut();
     }
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_signin);
 
         ButterKnife.bind(this);
 
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
     private void initializeGoogleApiClient() {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(MainActivity.this.getResources().getString(R.string.server_client_id))
+                .requestIdToken(SignInActivity.this.getResources().getString(R.string.server_client_id))
                 .requestEmail()
                 .build();
 
