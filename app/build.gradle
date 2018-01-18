@@ -14,12 +14,12 @@ task checkstyle(type: Checkstyle) {
 android {
     signingConfigs {
     }
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "com.winecta.hellogoogleplus"
         minSdkVersion 15
-        targetSdkVersion 23
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -39,10 +39,12 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:appcompat-v7:26.1.0'
     testCompile 'junit:junit:4.12'
+    compile 'com.google.firebase:firebase-messaging:10.2.0'
     compile 'com.google.android.gms:play-services-auth:10.2.0'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
 }
-apply plugin: 'com.google.gms.google-services'
+
+apply plugin: 'com.google.gms.google-services' // makes firebase work

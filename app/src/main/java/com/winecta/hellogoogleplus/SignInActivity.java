@@ -16,6 +16,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -186,12 +187,11 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
     }
 
     private void handleSignInResult(GoogleSignInResult result) {
-        Log.d(TAG, "HandleSignInResult:" + result.isSuccess());
         if (result.isSuccess()) {
             acct = result.getSignInAccount();
             saveUserLogged();
         } else {
-            Log.d(TAG, "Auth failed");
+            Toast.makeText(this, "Auth failed", Toast.LENGTH_SHORT).show();
         }
     }
 

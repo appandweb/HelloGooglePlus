@@ -69,6 +69,7 @@ A continuación importaremos:
 buildscript {
     repositories {
         jcenter()
+        maven { url 'https://maven.google.com' }
     }
     dependencies {
        //...
@@ -96,6 +97,7 @@ apply plugin: 'com.google.gms.google-services'
 
 dependencies {
 // ...
+    compile 'com.google.firebase:firebase-messaging:10.2.0'
     compile 'com.google.android.gms:play-services-auth:10.2.0'
  // ...
 }
