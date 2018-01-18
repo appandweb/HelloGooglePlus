@@ -131,7 +131,7 @@ GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DE
 
 > *El recurso **server_client_id** almacena la informacion de ID de cliente que guardamos antes como un recurso tipo string.
 
-2. Creamos un objeto GoogleApiClient, pero esta vez no será una variable local ya que después la necesitaremos. Su definición también irá dentro de onCreate().
+2. Creamos un objeto GoogleApiClient, pero esta vez será un atributo de clase ya que después la necesitaremos. Su definición también irá dentro de onCreate().
 
 ```javascript
 
@@ -250,4 +250,4 @@ private void handleSignInResult(GoogleSignInResult result) {
 
 La variable **acct** almacenará toda la información que solicitamos del usuario logueado, con ella podriamos mostrar su email, cargar su imagen de perfil etc.
 
-Ahora podemos probar la aplicación y debe funcionar todo correctamente, un saludo.
+Con esto ya podremos hacer login con Google Plus en nuestra App.
