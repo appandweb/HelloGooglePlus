@@ -8,7 +8,7 @@ Jose Armando Albarado [@josearmandoam](https://github.com/josearmandoam)
 
 ### Introduccion de Google Sign-In a nuestra Aplicación Android
 
-Para introducir el Google Sign-In en nuestra aplicación Android, lo primero que debemos de realizar es obtener el archivo de configuración que nos proporciona Google, por tanto accedemos a [Get Configuration File](https://developers.google.com/mobile/add?platform=android&cntapi=signin&cnturl=https:%2F%2Fdevelopers.google.com%2Fidentity%2Fsign-in%2Fandroid%2Fsign-in%3Fconfigured%3Dtrue&cntlbl=Continue%20Adding%20Sign-In), una vez dentro nos pedirá información de nuestra App:
+Para introducir el Google Sign-In en nuestra aplicación Android, lo primero que debemos de realizar es obtener el archivo de configuración que nos proporciona Google: `google-services.json`, por tanto accedemos a [Get Configuration File](https://developers.google.com/mobile/add?platform=android&cntapi=signin&cnturl=https:%2F%2Fdevelopers.google.com%2Fidentity%2Fsign-in%2Fandroid%2Fsign-in%3Fconfigured%3Dtrue&cntlbl=Continue%20Adding%20Sign-In), una vez dentro nos pedirá información de nuestra App:
 
 * Nombre de nuestra aplicación
 
@@ -27,7 +27,7 @@ Para rellenar el siguiente campo, debemos dirigirnos al AndroidManifest.xml de n
 
 Una vez realizado esto pulsamos en continuar, esperamos un momento y nos aparecerá una pantalla con los servicios que ofrece Google para los desarrolladores, por un lado tenemos Google Sign-In que es con el que vamos a trabajar, pero también disponemos de otras herramientas como Cloud Messaging y Analytics, estas dos últimas herramientas las detallaremos con exactitud en un futuro, la gran utilidad que tienen y la forma de implementarlas en nuestras Aplicaciones.
 
-Pues bien como he dicho anteriormente la herramienta con la que trabajaremos sera Google Sign-In,   por tanto seleccionamos dicha opción, una vez seleccionada se desplegará un campo el cual nos solicitará la clave SHA-1 de nuestra aplicación, para obtenerlo debemos seguir los siguiente pasos:
+Pues bien, como se ha citado anteriormente la herramienta con la que trabajaremos sera Google Sign-In,   por tanto seleccionamos dicha opción, una vez seleccionada se desplegará un campo el cual nos solicitará la clave SHA-1 de nuestra aplicación, para obtenerlo debemos seguir los siguiente pasos:
 
 1. Abrimos nuestro proyecto Android
 
@@ -50,7 +50,7 @@ Pues bien como he dicho anteriormente la herramienta con la que trabajaremos ser
 Una vez obtenida la clave SHA-1, la copiamos y la introducimos en el campo requerido.
 Presionamos sobre el botón “Enable Google Sign-In”, esperamos un momento y la opción de “Generate configuration files” se activará, pulsamos sobre dicha opción una vez que esté disponible.
 
-Si hemos realizado todos los pasos anteriores correctamente, se nos permitirá descargar el archivo de configuración, lo descargamos y lo introducimos dentro de la carpeta “app” de nuestro proyecto es decir:  ~/proyect_name/app/
+Si hemos realizado todos los pasos anteriores correctamente, se nos permitirá descargar el archivo `google-services.json`, lo descargamos y lo introducimos dentro de la carpeta “app” de nuestro proyecto es decir:  <PROJECT_FOLDER>/app/
 
 Procedemos ahora a crear una **web client ID**, para ello debemos abrir la [Credentials page](https://console.developers.google.com/apis/credentials) , dentro en la parte de arriba a la izquierda aparecerá el nombre del proyecto en el que estamos, hacemos click encima, aparecerá un listado de todos nuestros proyectos creados, vamos a crear un nuevo proyecto con el nombre que deseemos, es recomendable ponerle el nombre de nuestro proyecto Android para no perdernos después a la hora de buscarlo.
 
@@ -96,7 +96,7 @@ apply plugin: 'com.google.gms.google-services'
 
 dependencies {
 // ...
-    compile 'com.google.android.gms:play-services-auth:9.8.0'
+    compile 'com.google.android.gms:play-services-auth:10.2.0'
  // ...
 }
 
@@ -123,7 +123,7 @@ Una vez realizado esto, nos dirigimos a la vista en la que trabajaremos con el S
 ```javascript
 
 GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-        .requestIdToken(getString(R.string.server_client_id))*
+        .requestIdToken(getString(R.string.server_client_id))
         .requestEmail()
         .build();
 
